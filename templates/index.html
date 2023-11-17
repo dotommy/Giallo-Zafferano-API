@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Script Guide</title>
+</head>
+<body>
+
+  <h1>API Script Guide</h1>
+
+  <p>This script is designed to retrieve information about meals, pages, and recipes using specific API endpoints. Below are the details of the available endpoints:</p>
+
+  <h2>List of Categories</h2>
+
+  <ul>
+    <li><strong>0:</strong> Antipasti</li>
+    <li><strong>1:</strong> Primi</li>
+    <li><strong>2:</strong> Secondi-piatti</li>
+    <li><strong>3:</strong> Dolci-e-Desserts</li>
+    <li><strong>4:</strong> Lievitati</li>
+    <li><strong>5:</strong> Piatti-Unici</li>
+  </ul>
+
+  <h2>Meal and Page Information</h2>
+
+  <p>To retrieve information about a specific meal and page, use the following endpoint format:</p>
+
+  <pre>/meal_<i>{id_meal}</i>/page_<i>{id_page}</i></pre>
+
+  <p>Here, <code>{id_meal}</code> refers to the index of the meal in the array <code>meals_array</code>, and <code>{id_page}</code> is the page number for the specified meal category. The script will return a JSON object with the following properties:</p>
+
+  <ul>
+    <li><code>id</code>: The unique identifier for the page.</li>
+    <li><code>title</code>: The title of the page.</li>
+    <li><code>link</code>: The link to the page.</li>
+  </ul>
+
+  <h3>Example:</h3>
+
+  <pre>/meal_2/page_1</pre>
+
+  <p>This will return information about the first page of the "Secondi-piatti" category.</p>
+
+  <h2>Recipe Information</h2>
+
+  <p>If you want details about a specific recipe within a meal and page, use the following endpoint:</p>
+
+  <pre>/meal_<i>{id_meal}</i>/page_<i>{id_page}</i>/recipe_<i>{id_recipe}</i></pre>
+
+  <p>Here, <code>{id_meal}</code> and <code>{id_page}</code> have the same meaning as before, and <code>{id_recipe}</code> is the identifier of the recipe obtained from the previous API call. The script will return detailed information about the specified recipe.</p>
+
+  <h3>Example:</h3>
+
+  <pre>/meal_3/page_2/recipe_123</pre>
+
+  <p>This will return information about the recipe with the ID 123 in the "Dolci-e-Desserts" category on the second page.</p>
+
+</body>
+</html>
